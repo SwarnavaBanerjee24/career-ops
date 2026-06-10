@@ -1,0 +1,93 @@
+# Career-Ops Profile Configuration
+# Copy this file to config/profile.yml and fill in your details.
+# This is the single source of truth for your personal data across all modes.
+
+candidate:
+  full_name: "Swarnava Banerjee"
+  email: "swarnava.banerjee@fau.de"
+  phone: "+49 1633371081"
+  location: "Nürnberg, Germany"
+  linkedin: "linkedin.com/in/swarnavabanerjee"
+  github: "github.com/SwarnavaBanerjee24"
+
+target_roles:
+  # Your North Star roles — what you're optimizing for
+  primary:
+    - "Working Student ML/AI (Werkstudent)"
+    - "Internship ML/AI (Praktikum)"
+    - "Working Student Software Engineering"
+    - "Internship Software Engineering"
+    - "Junior ML Engineer"
+    - "Junior AI Engineer"
+    - "Junior Backend Engineer (Python)"
+  # Archetypes help the evaluation system score fit
+  archetypes:
+    - name: "ML/AI Engineer"
+      level: "Junior/Working Student"
+      fit: "primary"        # primary = dream role, secondary = good fit, adjacent = stretch
+    - name: "Backend Engineer (Python)"
+      level: "Junior/Working Student"
+      fit: "secondary"
+    - name: "Data Engineer / Data Scientist"
+      level: "Junior/Working Student"
+      fit: "adjacent"
+
+narrative:
+  # Your professional headline (1 line)
+  headline: "MSc Data Science student building end-to-end AI systems — from model training to cloud deployment"
+  # Your story — what makes you unique
+  exit_story: "BSc CSE from VIT India (1.7 German equiv), now pursuing MSc Data Science at FAU Erlangen-Nürnberg. Built and deployed production ML pipelines (VGG16 CV system, RAG document platform under patent review). Seeking working student or junior roles in Germany."
+  # Your top superpowers
+  superpowers:
+    - "End-to-end ML pipelines (training → containerized deployment on AWS)"
+    - "Python backend + REST API development"
+    - "RAG / LLM application development with LangChain"
+    - "CI/CD automation with Docker and GitHub Actions"
+  # Proof points — projects with measurable impact
+  proof_points:
+    - name: "Disease Classification (VGG16)"
+      url: "https://github.com/SwarnavaBanerjee24/chicken-disease-classification"
+      hero_metric: "96% validation accuracy, deployed to AWS EC2 via Docker/ECR"
+    - name: "PDF Query System"
+      url: ""
+      hero_metric: "RAG platform under patent review — semantic search, JWT auth, Streamlit UI"
+
+compensation:
+  target_range: "€15-20/hr (working student) or €40K-55K (junior full-time)"
+  currency: "EUR"
+  minimum: "€13/hr (working student)"
+  location_flexibility: "Any location in Germany fine — on-site, hybrid, or remote all acceptable"
+
+location:
+  country: "Germany"
+  city: "Nürnberg"
+  timezone: "CET"
+  visa_status: "Student visa (Germany) — eligible for working student positions up to 20h/week during semester"
+  # For remote roles outside your country:
+  # onsite_availability: "1 week/month in any city"
+
+cv:
+  output_format: "html" # "html" (default) or "latex"
+  # (Optional) Canva resume design ID for visual CV generation via /career-ops pdf.
+  # Find it in your Canva design URL: https://www.canva.com/design/DAxxxxxxx/...
+  # The ID starts with "D" and is 11 characters long.
+  # canva_resume_design_id: "DAxxxxxxxxx"
+
+# Auto-PDF threshold during evaluation (used by `/career-ops pipeline` and
+# `bash batch/batch-runner.sh`).
+#
+# An offer's tailored CV PDF is auto-generated only when its score is
+# >= this threshold. Generating a PDF costs ~30-60s per offer (Playwright
+# launch + HTML render), and most offers in a scan score 2.x/3.x and never
+# become an actual application — so the gate avoids wasted renders.
+#
+# Default (key absent OR commented out): 3.0 — the original gate of
+# `/career-ops pipeline`. Both evaluation paths apply the same default, so
+# a batch run and an interactive run treat the same offer identically.
+#
+# Raise it (e.g. 4.0) to auto-generate PDFs only for stronger matches and
+# leave the rest report-only — those can still be produced on demand via
+# `/career-ops pdf {company-slug}`. Fractional thresholds work (e.g. 3.5 —
+# half-point scores like 3.5/5 occur in evaluations). Set it to 0 to
+# generate a PDF for every offer.
+# auto_pdf_score_threshold: 4.0
